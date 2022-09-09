@@ -1,0 +1,33 @@
+Steps to solve this question are very easy.Lets see and try to solve them in easiest way:
+Base condition when tree is null.
+Create a queue to store tree nodes(as left and right nodes of tree.
+we will find count as size of elements present in recent queue.
+then run a for loop to get the last element present in the queue.
+put condition as if(i==count-1) and add that element in the list.
+and check for left and right tree if they are null or not.
+if not then add them in the list.
+Here you go for code:
+//
+public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> list=new ArrayList<>();
+        if(root==null) return list;
+        Queue<TreeNode> q=new LinkedList<>();
+        q.add(root);
+        while(q.isEmpty()==false){
+            int count=q.size();
+            for(int i=0;i<count;i++){
+                TreeNode curr=q.poll();
+                if(i==count-1){
+                    list.add(curr.val);
+                }
+                if(curr.left!=null){
+                    q.add(curr.left);
+                }
+                if(curr.right!=null){
+                    q.add(curr.right);
+                }
+            }
+        }
+        return list;
+    }
+    //
