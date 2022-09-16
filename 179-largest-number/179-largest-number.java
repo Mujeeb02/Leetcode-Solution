@@ -6,6 +6,7 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             str[i]=String.valueOf(nums[i]);
         }
+        //Now we will be checking for 2nd last position and compare them according to our requirements to get optimized ans.
         Arrays.sort(str,(a,b)->{
             long n1=Long.parseLong(a+b);
             long n2=Long.parseLong(b+a);
