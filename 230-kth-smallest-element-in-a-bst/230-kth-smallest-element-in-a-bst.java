@@ -18,11 +18,8 @@ class Solution {
     int a=0;
     
     public int kthSmallest(TreeNode root, int k) {
-        inorder(root,k);
-        return res;
-    }
-    public int inorder(TreeNode root,int k){
-        if(root==null){
+        // inorder(root,k);
+         if(root==null){
             return res;
         }
         kthSmallest(root.left,k);
@@ -33,4 +30,8 @@ class Solution {
         kthSmallest(root.right,k);
         return res;
     }
+//     public int inorder(TreeNode root,int k){
+       
+//         return res;
+//     }
 }
